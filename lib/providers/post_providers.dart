@@ -20,15 +20,17 @@ class PostProvider extends ChangeNotifier {
     // await Future.delayed(Duration(seconds: 1));
 
     isLoading = true;
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     notifyListeners();
     try {
       final result = await postRepo.getPost();
       final listJson = json.decode(result.body) as List;
       posts = listJson.map((e) => PostModel.fromJson(e)).toList();
+      // ignore: avoid_print
       print('Succes availible');
     } catch (e) {
-      print(e);
+    
+      // ignore: avoid_print
       print('ErrorData');
       errorMessage = 'Проверьте подключение Интернета';
     }

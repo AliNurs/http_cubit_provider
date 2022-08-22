@@ -3,8 +3,12 @@
 import 'package:http/http.dart' as http;
 
 class PostRepo {
-  // Future<http.Response>
-  getPost() async {
+  PostRepo() {
+    // ignore: avoid_print
+    print('Эсли lazy:false сразу работает этот метод');
+  }
+
+  Future<http.Response> getPost() async {
     final url = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     // final result = await http.get(url);
     // print(result.body);

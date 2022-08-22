@@ -5,22 +5,22 @@ class CharactersModel {
   CharactersModel({this.info, this.results});
 
   CharactersModel.fromJson(Map<String, dynamic> json) {
-    info = json['info'] != null ? new Info.fromJson(json['info']) : null;
+    info = json['info'] != null ?  Info.fromJson(json['info']) : null;
     if (json['results'] != null) {
       results = <Results>[];
       json['results'].forEach((v) {
-        results!.add(new Results.fromJson(v));
+        results!.add( Results.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.info != null) {
-      data['info'] = this.info!.toJson();
+    final Map<String, dynamic> data =  <String, dynamic>{};
+    if (info != null) {
+      data['info'] = info!.toJson();
     }
-    if (this.results != null) {
-      data['results'] = this.results!.map((v) => v.toJson()).toList();
+    if (results != null) {
+      data['results'] = results!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -30,6 +30,7 @@ class Info {
   int? count;
   int? pages;
   String? next;
+  // ignore: prefer_void_to_null, unnecessary_question_mark
   Null? prev;
 
   Info({this.count, this.pages, this.next, this.prev});
@@ -42,11 +43,11 @@ class Info {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['count'] = this.count;
-    data['pages'] = this.pages;
-    data['next'] = this.next;
-    data['prev'] = this.prev;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['count'] = count;
+    data['pages'] = pages;
+    data['next'] = next;
+    data['prev'] = prev;
     return data;
   }
 }
@@ -87,9 +88,9 @@ class Results {
     type = json['type'];
     gender = json['gender'];
     origin =
-        json['origin'] != null ? new Origin.fromJson(json['origin']) : null;
+        json['origin'] != null ?  Origin.fromJson(json['origin']) : null;
     location =
-        json['location'] != null ? new Origin.fromJson(json['location']) : null;
+        json['location'] != null ?  Origin.fromJson(json['location']) : null;
     image = json['image'];
     episode = json['episode'].cast<String>();
     url = json['url'];
@@ -97,23 +98,23 @@ class Results {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['status'] = this.status;
-    data['species'] = this.species;
-    data['type'] = this.type;
-    data['gender'] = this.gender;
-    if (this.origin != null) {
-      data['origin'] = this.origin!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['status'] = status;
+    data['species'] = species;
+    data['type'] = type;
+    data['gender'] = gender;
+    if (origin != null) {
+      data['origin'] = origin!.toJson();
     }
-    if (this.location != null) {
-      data['location'] = this.location!.toJson();
+    if (location != null) {
+      data['location'] = location!.toJson();
     }
-    data['image'] = this.image;
-    data['episode'] = this.episode;
-    data['url'] = this.url;
-    data['created'] = this.created;
+    data['image'] = image;
+    data['episode'] = episode;
+    data['url'] = url;
+    data['created'] = created;
     return data;
   }
 }
@@ -130,9 +131,9 @@ class Origin {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['url'] = this.url;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['url'] = url;
     return data;
   }
 }

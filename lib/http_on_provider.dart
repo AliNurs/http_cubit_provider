@@ -47,9 +47,9 @@ class MyHomePage extends StatelessWidget {
         ],
       ),
       body: ListView(padding: const EdgeInsets.all(12), children: [
-        if (vm.isLoading) CircularProgressIndicator(),
+        if (vm.isLoading) const CircularProgressIndicator(),
         if (vm.errorMessage.isEmpty && vm.posts.isEmpty && !vm.isLoading)
-          Text(
+          const Text(
             'Список пусто, Загрузите данные',
             textAlign: TextAlign.center,
           ),

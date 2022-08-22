@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class MyListTileItem extends StatelessWidget {
@@ -18,7 +20,7 @@ class MyListTileItem extends StatelessWidget {
       minVerticalPadding: 15,
       leading: Text(
         id,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w600,
           height: 2.2,
@@ -27,7 +29,7 @@ class MyListTileItem extends StatelessWidget {
       minLeadingWidth: 16,
       title: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
@@ -35,7 +37,7 @@ class MyListTileItem extends StatelessWidget {
       ),
       subtitle: Text(
         subtitle,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 17,
           fontWeight: FontWeight.w400,
         ),
